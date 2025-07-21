@@ -5,14 +5,9 @@
 /.env
 /.nyc_output
 
-# We're a library, so please, no lock files
-/package-lock.json
-/yarn.lock
-
 # Generated types
 *.d.ts
 *.d.ts.map
 !/lib/**/*-types.d.ts
-!/index.d.ts
 
 # Library specific ones
