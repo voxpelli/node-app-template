@@ -1,13 +1,15 @@
-import chai from 'chai';
+import assert from 'node:assert/strict';
+import { describe, it } from 'node:test';
 
-// TODO: Replace with proper setup
+import { assertType } from '@voxpelli/typed-utils';
+
 import { main } from '../lib/main.js';
-
-chai.should();
 
 describe('something', () => {
   it('should work', async () => {
     const result = await main('foo');
-    result.should.equal('Name: foo');
+
+    assertType(result, 'string');
+    assert.equal(result, 'Name: foo');
   });
 });

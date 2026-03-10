@@ -7,7 +7,10 @@
     "lib/**/*",
     "test/**/*",
   ],
+  "exclude": [
+    "typetests/**/*"
+  ],
   "compilerOptions": {
-    "types": ["node", "mocha"]
+    "types": ["node"]
   }
 }
