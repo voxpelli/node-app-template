@@ -18,7 +18,7 @@
   "type": "module",
   "exports": "./index.js",
   "scripts": {
-    "check-type-tests": "tstyche --target \"5.9\" --reporters list,summary",
+    "check-type-tests": "tstyche --target \"$(node -p \"require('./package.json').engines.typescript\")\" --reporters list,summary",
     "check:installed-check": "installed-check -i tstyche",
     "check:knip": "knip",
     "check:lint": "eslint",
@@ -29,7 +29,8 @@
     "clean:declarations-lib": "rm -f $(find lib -type f -name '*.d.ts*' 2>/dev/null || true)",
     "clean": "run-p clean:*",
     "dev": "node --watch index.js",
-    "prepare": "husky",
+    "husky-enable": "husky",
+    "husky-disable": "git config --unset core.hooksPath",
     "test:node": "c8 --reporter=lcov --reporter=text node --test",
     "test-ci": "run-s test:*",
     "test": "run-s check test:*"
