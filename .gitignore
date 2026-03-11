@@ -10,4 +10,5 @@
 *.d.ts.map
 !/lib/**/*-types.d.ts
 
-# Library specific ones
+# App specific ones
+# We commit package-lock.json for reproducible app deployments.
